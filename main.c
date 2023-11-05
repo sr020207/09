@@ -1,19 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define SIZE 5 // SIZE를 5로 교체하는 매크로 
-int main(void)
-{
-	int i, average;
-	int sum;
-	int grade[SIZE];
-	sum = 0;
-	for(i=0; i<SIZE; i++)
-	{
-	printf("학생 성적을 입력하세요 : ");
-	scanf("%d", &grade[i]);
-	sum += grade[i];
-}
-	average = sum / SIZE;
-	printf("성적 평균 : %d\n", average);
-	return 0;
+
+#define SIZE 5
+
+int main() {
+    int i;
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    int b[SIZE] = {1, 2, 3, 4, 10};
+    int flag_same = 1;
+
+    for (i = 0; i < SIZE; i++) {
+        if (a[i] != b[i]) {
+            flag_same = 0; 
+            printf("배열 값이 다른 인덱스: %d\n", i);
+        }
+    }
+
+    if (flag_same == 1) {
+        printf("배열은 같은 값을 가집니다.\n");
+    }
+
+    return 0;
 }
