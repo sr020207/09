@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int main(int argc, char *argv[]) {
-	int i;
-    int grade[5];
-    grade[0] = 10;
-    grade[1] = 20;
-    grade[2] = 30;
-    grade[3] = 40;
-    grade[4] = 50;
-
-    for (i = 0; i < 5; i++) {
-        printf("학생 %d: %d\n", i + 1, grade[i]); //학생 1부터 출력 
-    }
-
-    return 0;
+#define SIZE 5 // SIZE를 5로 교체하는 매크로 
+int main(void)
+{
+	int i, average;
+	int sum;
+	int grade[SIZE];
+	sum = 0;
+	for(i=0; i<SIZE; i++)
+	{
+	printf("학생 성적을 입력하세요 : ");
+	scanf("%d", &grade[i]);
+	sum += grade[i];
+}
+	average = sum / SIZE;
+	printf("성적 평균 : %d\n", average);
+	return 0;
 }
